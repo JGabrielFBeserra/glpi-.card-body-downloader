@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GLPI Card Export",
+  "version": "1.7",
+  "description": "Exporta cards GLPI como PDF com anexos e numeração de páginas.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": [
+    "http://ti.concessionariatamoios.com.br/*"
+  ],
+  "action": {
+    "default_title": "Exportar Card GLPI"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon.png"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/pdfjs/pdf.min.js",
+        "libs/pdfjs/pdf.worker.min.js"
+      ],
+      "matches": [
+        "http://ti.concessionariatamoios.com.br/*"
+      ]
+    }
+  ]
+}
